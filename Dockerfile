@@ -1,4 +1,4 @@
-FROM trafex/php-nginx:3.9.0
+FROM trafex/php-nginx:3.12
 
 LABEL maintainer="Nicolas H. <nicolashiot@hotmail.fr>"
 LABEL description="Bluemap webapp"
@@ -10,7 +10,7 @@ ARG BLUEMAP_VERSION=5.20
 USER root
 
 # Install dependencies
-RUN apk add --no-cache curl php84-pdo php84-pdo_mysql unzip
+RUN apk add --no-cache curl php85-pdo php85-pdo_mysql unzip
 
 # Download and extract BlueMap.jar to temporary directory
 RUN tmpdir=$(mktemp -d) && \
